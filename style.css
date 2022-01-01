@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;800&family=Open+Sans:wght@500&family=Poppins:wght@500&family=Roboto+Mono:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    /* color: #fff; */
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #08001b;
+    min-height: 100vh;
+}
+.container{
+    overflow:hidden;
+    width: 1100px;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}       
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #0c002b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    box-shadow:  0 20px 50px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+}
+.container .card::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    left: 0px;
+    /* right: 0px; */
+    top: 0px;
+    bottom: 0px;
+    pointer-events: none;
+}
+.container .card .content{
+    padding: 30px;
+    text-align: center;
+}
+.container .card .content h2{
+    position: absolute;
+    right: 50px;
+    font-size: 4em;
+    color: #1779ff;
+    font-weight: 800;
+    z-index: 1;
+    opacity: 0.1;
+    transition: 0.5s;
+}
+.container .card:hover .content h2{
+    opacity: 1;
+    transform: translateY(-70px);
+}
+.container .card .content h3{
+    color: #fff;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    z-index: 2;
+    transition: 0.5s;
+}
+.container .card:hover .content h3{
+    opacity: 1;
+}
+.container .card .content p{
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    line-height: 20px;
+    opacity: 0.2;
+    z-index: 2;
+    transition: 0.2s;
+}
+.container .card:hover .content p{
+    opacity: 1;
+}
+.container .card .content a{
+    display:  inline-block;
+    background-color: #fff;
+    margin-top: 15px;
+    font-size: small;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #0c002b;
+}
+.container .card .content a:hover{
+    background-color: #4b18c0;
+    color: #fff;
+}
+.container .card span{
+    /* overflow:hidden; */
+    transition: 1s;
+    opacity: 0;
+}
+.container .card:hover span{
+    opacity: 1;
+}
+.container .card span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #1779ff);
+    animation: animate1 2s linear infinite;
+}
+@keyframes animate1 {
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    100%
+    {
+        transform: translateX(100%);
+    }
+    
+}
+.container .card span:nth-child(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* left: 0; */
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, #1779ff);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate2 {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+    
+}
+.container .card span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(to left, transparent, #1779ff);
+    animation: animate3 2s linear infinite;
+}
+@keyframes animate3 {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+    
+}
+.container .card span:nth-child(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to top, transparent, #1779ff);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate4 {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+    
+}
